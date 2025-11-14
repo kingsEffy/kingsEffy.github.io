@@ -1,0 +1,1 @@
+Drop your CV PDF here, e.g., Effie_CV.pdf, and link it from the homepage.

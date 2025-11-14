@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Effie — Personal Website</title>
+  <meta name="description" content="Effie — Systems Neuroscientist | Visual Navigation | Neural Dynamics & Computation.">
+  <meta property="og:title" content="Effie — Personal Website">
+  <meta property="og:description" content="Research, publications, projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/avatar.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site">
+    <div class="container navbar">
+      <a class="logo" href="/">Effie</a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">☾</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container wrap">
+        <img
+          id="avatar"
+          src="assets/img/avatar.jpg"
+          data-alt="assets/img/avatar_alt.jpg"
+          alt="Portrait of Effie"
+          role="button"
+          tabindex="0"
+          aria-pressed="false"
+          style="cursor:pointer"
+        />
+
+        <div>
+          <h1>Effie</h1>
+          <p class="sub">System Neuroscience — computational methods, circuits, behavior.</p>
+          <p class="lead">
+            I’m fascinated by how neural dynamics form patterns that help animals — and eventually, machines — understand where they are and where to go next.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:yz_376@usc.edu">Email</a>
+            <a class="btn" href="publications.html">Full Publications</a>
+            <a class="btn" href="projects/ca3-virtual-navigation/">Virtual Navigation Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p class="lead">
+          I’m a systems neuroscientist studying how the brain transforms visual information into perception, navigation, and decision. My work bridges large-scale neural recordings with computational modeling to uncover how distributed circuits communicate. Ultimately, I aim to build an artificial brain that mirrors the full functional complexity of the human one — a system that truly thinks, sees, and adapts as biology does.
+        </p>
+        <ul class="news">
+          <p class="about-line"><strong>Nov 2025:</strong> Postdoc-ing: my work combines large-scale Neuropixels recordings, visual flow stimuli, and computational modeling to reveal how circuits encode motion, space, and perception.</p>
+
+          <p class="about-line"><strong>March 2023:</strong> Left Cedars-Sinai, joined Dr. Tao & Li’s Lab in USC.</p>
+
+          <p class="about-line"><strong>Jan 2021:</strong> Officially earned my PhD — with an unexpected 1.5-year home extension courtesy of Covid Nineteen.</p>
+
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2>Selected publications</h2>
+
+        <article class="pub">
+          <div>
+            <h3>Schizophrenia risk-gene Crmp2 deficiency causes precocious critical period plasticity and deteriorated binocular vision</h3>
+            <div class="meta"><strong>Effie</strong>, Science Bulletin, (2021).</div>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://doi.org/10.1016/j.scib.2021.02.011" target="_blank">Paper</a>
+            <a class="btn" href="https://orcid.org/0000-0002-5534-5415" target="_blank">Full List</a>
+          </div>
+
+          <details>
+            <summary>Abstract</summary>
+            <p>In this study, by examining the classical experience-dependent OD plasticity of developing mouse V1, we revealed a new role of schizophrenia-risk gene Crmp2 in regulating the timing of CP for neuronal circuit refinement and maturation during postnatal development.</p>
+          </details>
+        </article>
+
+        <article class="pub">
+          <div>
+            <h3>Portrait of visual cortical circuits for generating neural oscillation dynamics</h3>
+            <div class="meta"><strong>Effie</strong>, Cognitive Neurodynamics, Review Paper (2020).</div>
+          </div>
+          <div class="links">
+            <a class="btn" href="https://doi.org/10.1007/s11571-020-09623-4" target="_blank">Paper</a>
+          </div>
+          <details>
+            <summary>Abstract</summary>
+            <p>The review summarizes recent experimental findings on elucidating cellular or circuitry mechanisms for the generation of neural oscillations with distinct rhythms in either developing or matured mouse V1, mainly focusing on visual relaying circuits and distinct local inhibitory circuits.</p>
+          </details>
+        </article>
+
+        <p><a class="btn" href="publications.html">See all publications</a></p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Selected projects</h2>
+        <div class="cards">
+          <a class="card" href="projects/ca3-virtual-navigation/">
+            <h3>Investigating the Coding Properties of CA3 Principal Neurons During Virtual Navigation</h3>
+            <p>2023-01 → 2025-01 · Cedars-Sinai award</p>
+          </a>
+          <a class="card" href="projects/analysis-toolkit/">
+            <h3>Analysis Toolkit</h3>
+            <p>Reusable code for neural signal processing, brusting neuron detection tool, Kilosort pipeline etc.</p>
+          </a>
+          <a class="card" href="projects/closed-loop-rig/">
+            <h3>Closed-loop Rig</h3>
+            <p>Hardware notes, BOM, controller firmware, and latency tests.</p>
+          </a>
+          <a class="card" href="projects/time-coding/">
+            <h3>Time Coding</h3>
+            <p>Investigate time coding and temporal receptive field of mouse brain.</p>
+          </a>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">Email: <a href="mailto:effywinsyffe@gmail.com">effywinsyffe@gmail.com</a></p>
+        <div class="links">
+          <a class="btn" href="https://github.com/kingsEffy" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.researchgate.net/profile/Yuan-Zhang-21" target="_blank" rel="noopener">ResearchGate</a>
+          <a class="btn" href="https://orcid.org/0000-0002-5534-5415" target="_blank" rel="noopener">ORCID</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=IIkmRK8AAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="links">
+        <span>© <span id="year"></span> Effie</span>
+        <span>·</span>
+        <a href="publications.html">Publications</a>
+        <span>·</span>
+        <a href="projects/Virtual Navigation/">Projects</a>
+      </div>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
