@@ -663,3 +663,18 @@ a:visited {
 .hero .actions .btn {
   min-width: 150px;       /* you can reduce this too */
 }
+
+#about-typing {
+  position: relative;
+}
+
+#about-typing::after {
+  content: "▌";
+  margin-left: 3px;
+  animation: caretBlink 1s infinite;
+}
+
+@keyframes caretBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}

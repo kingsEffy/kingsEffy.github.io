@@ -76,3 +76,132 @@
   const alt = img.getAttribute('data-alt');
   if (alt) { const pre = new Image(); pre.src = alt; }
 })();
+
+
+// ---- Typing effect for About paragraph ----
+(function () {
+  const el = document.getElementById('about-typing');
+  if (!el) return;
+
+  // Respect reduced-motion preference
+  const prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  const fullText = el.textContent.trim();
+  el.textContent = '';           // start empty
+  let i = 0;
+  const speed = 25;              // ms per character
+
+  function typeNext() {
+    if (i > fullText.length) return;
+    el.textContent = fullText.slice(0, i);
+    i++;
+    setTimeout(typeNext, speed);
+  }
+
+  // Optional: only start once About section comes into view
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeNext();
+        observer.disconnect();   // run once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(el);
+})();
+// ---- Looping Typing Effect for About Paragraph ----
+(function () {
+  const el = document.getElementById('about-typing');
+  if (!el) return;
+
+  // Respect reduced-motion preference
+  const prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  const fullText = el.textContent.trim();
+  const speed = 25;          // ms per character
+  const pause = 1500;        // wait before restarting
+  let i = 0;
+
+  function typeLoop() {
+    el.textContent = fullText.substring(0, i);
+
+    if (i < fullText.length) {
+      i++;
+      setTimeout(typeLoop, speed);
+    } else {
+      // end reached → wait → reset → start again
+      setTimeout(() => {
+        el.textContent = "";
+        i = 0;
+        setTimeout(typeLoop, speed);
+      }, pause);
+    }
+  }
+
+  // Start typing when section is visible
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeLoop();
+        // DO NOT disconnect → loop can restart forever
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(el);
+})();
+// ===== Looping typing effect for About text =====
+(function () {
+  const el = document.getElementById('about-typing');
+  if (!el) return;
+
+  // Respect reduced-motion preference
+  const prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    el.textContent = el.getAttribute('data-fulltext') || '';
+    return;
+  }
+
+  const fullText = el.getAttribute('data-fulltext') || '';
+  const typeSpeed = 25;     // ms per character
+  const pauseEnd = 1500;    // pause after finishing
+  const pauseClear = 400;   // pause before re-typing
+
+  let i = 0;
+  let typingForward = true;
+
+  function loop() {
+    if (typingForward) {
+      // typing forwards
+      el.textContent = fullText.slice(0, i);
+      if (i < fullText.length) {
+        i++;
+        setTimeout(loop, typeSpeed);
+      } else {
+        // finished typing, pause then start erasing
+        typingForward = false;
+        setTimeout(loop, pauseEnd);
+      }
+    } else {
+      // erasing backwards
+      el.textContent = fullText.slice(0, i);
+      if (i > 0) {
+        i--;
+        setTimeout(loop, typeSpeed);
+      } else {
+        // fully erased, pause then start typing again
+        typingForward = true;
+        setTimeout(loop, pauseClear);
+      }
+    }
+  }
+
+  // start loop
+  loop();
+})();
