@@ -281,3 +281,12 @@ body::before {
     transition: none;
   }
 }
+.card h3 {
+  color: #ffda79;
+  text-shadow: 0 0 6px rgba(255, 218, 121, 0.3);
+}
+
+.card:hover h3 {
+  color: #ffe8a6;
+  text-shadow: 0 0 10px rgba(255, 232, 166, 0.6);
+}
